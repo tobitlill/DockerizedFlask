@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    container_name: minimal-flask
+    command: flask run
+    environment:
+      - FLASK_APP=app
+      - FLASK_DEBUG=1
+      - FLASK_RUN_HOST=0.0.0.0
+      - FLASK_RUN_PORT=12788
+    ports:
+      - 12788:12788
+    volumes:
+      - .:/code
